@@ -13,4 +13,5 @@
 - [] Create a Servlet to handle the `/register` route (Hussien)
 - [] Create a Servlet to handle the `/login` route (Hussien)
 - [] UI/UX design needs to be implemented (Y.Amr)
+- [] Create a logo for QUILL
 - [] Create a SQL Database schema (Y.Amr)
