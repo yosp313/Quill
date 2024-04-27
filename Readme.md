@@ -23,9 +23,3 @@
 - [] UI/UX design needs to be implemented
 - [] Create a SQL Database schema
 
-- [] Create a Servlet to handle the `/register` route (Hussein)
-- [] Create a Servlet to handle the `/login` route (Hussein)
-- [] UI/UX design needs to be implemented (Y.Amr)
-- [] Create a logo for QUILL
-- [] Create a SQL Database schema (Y.Amr)
-
