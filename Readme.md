@@ -21,6 +21,7 @@
 ### Hussein Amr:
 - [] Create a Servlet to handle the `/register` route
 - [] Create a Servlet to handle the `/login` route
+- [] Delete Account
 
 ### Youssef Amr:
 - [x] Create a logo for QUILL
