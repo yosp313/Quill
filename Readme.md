@@ -11,15 +11,19 @@
 ## Todo:
 
 
-###  Y.Ayman:
+###  Youssef Ayman:
  - [] Make the user Read all the posts
+ - [] Make the user Create his posts
+ - [] Make the user Update his posts
+ - [] Make the user Delete his Posts
+ - [] Implement the Proxy deign Pattern to cache
 
-### H.Amr:
+### Hussein Amr:
 - [] Create a Servlet to handle the `/register` route
 - [] Create a Servlet to handle the `/login` route
 
-### Y.Amr:
+### Youssef Amr:
 - [x] Create a logo for QUILL
 - [] UI/UX design needs to be implemented
 - [] Create a SQL Database schema
-
+- [] Implement the JSP for the frontend
