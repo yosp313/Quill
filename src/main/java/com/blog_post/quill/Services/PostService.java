@@ -1,7 +1,6 @@
 package com.blog_post.quill.Services;
 
 import com.blog_post.quill.Models.Post;
-import com.blog_post.quill.Models.User;
 
 import java.sql.*;
 import java.util.ArrayList;

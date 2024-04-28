@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
-    private static final String ConnectionString = "mysql://localhost:3306/quill";
-    private static final String UserName = "root";
-    private static final String Password = "Root1234";
+    private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/quill";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "Root1234";
     private static String sqlQuery;
 
 
@@ -24,7 +24,7 @@ public class UserService {
             throw new RuntimeException(e);
         }
 
-        Connection conn = DriverManager.getConnection(ConnectionString, UserName, Password);
+        Connection conn = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
         PreparedStatement stmt = conn.prepareStatement(sqlQuery);
 
         stmt.setString(1, id);
@@ -42,6 +42,7 @@ public class UserService {
 
         return new User();
     }
+
     public void postUser(String Email, String userName, String Password) throws SQLException {
         sqlQuery = "INSERT INTO users (email, username, password) VALUES (?, ?, ?)";
 
@@ -50,7 +51,7 @@ public class UserService {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
+        Connection connection = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
         statement.setString(1, Email);
