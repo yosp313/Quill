@@ -7,10 +7,26 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <form action="/Register" method="post">
+        <label>E-Mail</label>
+        <input type="email" name="email" id="mail">
+        <br>
+        <label>User Name</label>
+        <input type="text" name="userName" id="Name">
+        <br>
+        <label>Password</label>
+        <input type="password" name="password" id="pass">
+        <br>
+        <label>Confirm Password</label>
+        <input type="Password" name="confirmPassword" id="confirmPass">
+        <br>
+        <p>${error}</p>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+</body>
 </html>
