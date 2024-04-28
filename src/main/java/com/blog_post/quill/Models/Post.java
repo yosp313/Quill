@@ -6,13 +6,6 @@ public class Post {
     String content;
     String user_id;
 
-    public Post(int id, String title, String content, String user_id) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.user_id = user_id;
-    }
-
     public Post(String title, String content, String userId) {
         this.title = title;
         this.content = content;

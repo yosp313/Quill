@@ -55,19 +55,17 @@ public class PostService {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-        while (resultSet.next()) {
-            int id = Integer.parseInt(resultSet.getString("id"));
+        if (resultSet.next()) {
             String title = resultSet.getString("title");
             String content = resultSet.getString("content");
             String author = resultSet.getString("user_id");
-            Post post = new Post(id, title, content, author);
-            return post;
+
+            return new Post(title, content, author);
         }
 
         resultSet.close();
         statement.close();
         connection.close();
-
 
         return new Post();
 
@@ -82,6 +80,8 @@ public class PostService {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+
         Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
