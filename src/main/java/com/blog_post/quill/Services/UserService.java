@@ -42,4 +42,24 @@ public class UserService {
 
         return new User();
     }
+    public void postUser(String Email, String userName, String Password) throws SQLException {
+        sqlQuery = "INSERT INTO users (email, username, password) VALUES (?, ?, ?)";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, Email);
+        statement.setString(2, userName);
+        statement.setString(3, Password);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
 }
