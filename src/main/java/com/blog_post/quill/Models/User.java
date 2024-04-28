@@ -6,14 +6,14 @@ public class User {
     String username;
     String password;
 
-    public User() {
-    }
-
     public User(int id, String email, String username, String password) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
+    }
+
+    public User() {
     }
 
     public int getId() {
