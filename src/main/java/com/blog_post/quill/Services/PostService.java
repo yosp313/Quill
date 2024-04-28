@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostService {
-    private static final String ConnectionString = "mysql://localhost:3306/quill";
+    private static final String ConnectionString = "jdbc:mysql://localhost:3306/quill";
     private static final String UserName = "root";
     private static final String Password = "Root1234";
     private static String sqlQuery;
@@ -31,7 +31,8 @@ public class PostService {
         while (resultSet.next()) {
             String title = resultSet.getString("title");
             String content = resultSet.getString("content");
-            posts.add(new Post(title, content));
+            String userId = resultSet.getString("user_id");
+            posts.add(new Post(title, content, userId));
         }
         resultSet.close();
         statement.close();
@@ -72,9 +73,9 @@ public class PostService {
 
     }
 
-    public void postBlog(String title, String content) throws SQLException {
-        Post post = new Post(title, content);
-        sqlQuery = "INSERT INTO blogs  (title, content) VALUES (?, ?)";
+    public void postBlog(String title, String content, String authorId) throws SQLException {
+        sqlQuery = "INSERT INTO posts (title, content, user_id)\n" +
+                "SELECT ?, ?, id FROM users WHERE id = ? LIMIT 1;";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -84,8 +85,9 @@ public class PostService {
         Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-        statement.setString(1, post.getTitle());
-        statement.setString(2, post.getContent());
+        statement.setString(1, title);
+        statement.setString(2, content);
+        statement.setString(3, authorId);
 
         statement.executeUpdate();
 

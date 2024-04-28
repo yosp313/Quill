@@ -13,9 +13,10 @@ public class Post {
         this.user_id = user_id;
     }
 
-    public Post(String title, String content) {
+    public Post(String title, String content, String userId) {
         this.title = title;
         this.content = content;
+        this.user_id = userId;
     }
 
     public Post() {
