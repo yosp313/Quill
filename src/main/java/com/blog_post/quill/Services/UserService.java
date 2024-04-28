@@ -14,8 +14,8 @@ public class UserService {
 
 
 
-    public User GetUser(String id) throws SQLException {
-        sqlQuery = "SELECT * FROM users WHERE id = ?";
+    public User GetUser(String email) throws SQLException {
+        sqlQuery = "SELECT * FROM users WHERE email = ?";
 
 
         try{
@@ -27,17 +27,17 @@ public class UserService {
         Connection conn = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
         PreparedStatement stmt = conn.prepareStatement(sqlQuery);
 
-        stmt.setString(1, id);
+        stmt.setString(1, email);
 
         ResultSet rs = stmt.executeQuery();
 
         if(rs.next()){
             int userId = rs.getInt("id");
-            String email = rs.getString("email");
+            String Email = rs.getString("email");
             String userName = rs.getString("username");
             String password = rs.getString("password");
 
-            return new User(userId, email, userName, password);
+            return new User(userId, Email, userName, password);
         }
 
         return new User();

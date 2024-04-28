@@ -1,5 +1,6 @@
 package com.blog_post.quill.Servlets;
 
+import com.blog_post.quill.Models.User;
 import com.blog_post.quill.Services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,11 +34,19 @@ public class UserServlet extends HttpServlet {
                 request.setAttribute("error", "Passwords do not match");
                 doGet(request, response);
             }else{
-                System.out.println("account has been created");
                 UserService userService = new UserService();
-                
                 try {
-                    userService.postUser(email, userName, password);
+                   User user = userService.GetUser(email);
+                   String userEmail = user.getEmail();
+                    if (userEmail == null) {
+                        try {
+                            userService.postUser(email, userName, password);
+                            System.out.println("account has been created");
+
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
