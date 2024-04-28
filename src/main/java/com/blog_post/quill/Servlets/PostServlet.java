@@ -29,6 +29,8 @@ public class PostServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        resp.setStatus(HttpServletResponse.SC_CREATED);
+        req.setAttribute("message", "Blog Created Successfully!");
+
+        req.getRequestDispatcher("/posts.jsp").forward(req, resp);
     }
 }
