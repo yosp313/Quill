@@ -1,5 +1,6 @@
 package com.blog_post.quill.Services;
 
+import com.blog_post.quill.Configs.DB;
 import com.blog_post.quill.Models.User;
 
 import java.sql.*;
@@ -7,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
-    private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/quill";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "Root1234";
     private static String sqlQuery;
+    private static DB db = new DB();
 
 
 
@@ -24,7 +23,7 @@ public class UserService {
             throw new RuntimeException(e);
         }
 
-        Connection conn = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
+        Connection conn = db.ConfDB();
         PreparedStatement stmt = conn.prepareStatement(sqlQuery);
 
         stmt.setString(1, email);
@@ -51,7 +50,7 @@ public class UserService {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        Connection connection = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
+        Connection connection = db.ConfDB();
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
         statement.setString(1, Email);

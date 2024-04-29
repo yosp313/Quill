@@ -1,5 +1,6 @@
 package com.blog_post.quill.Services;
 
+import com.blog_post.quill.Configs.DB;
 import com.blog_post.quill.Models.Post;
 
 import java.sql.*;
@@ -7,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostService {
-    private static final String ConnectionString = "jdbc:mysql://localhost:3306/quill";
-    private static final String UserName = "root";
-    private static final String Password = "Root1234";
     private static String sqlQuery;
+    private static DB db = new DB();
 
 
     public List<Post> getAllBlogs() throws SQLException {
@@ -23,7 +22,7 @@ public class PostService {
             throw new RuntimeException(e);
         }
 
-        Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
+        Connection connection = db.ConfDB();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sqlQuery);
 
@@ -50,7 +49,7 @@ public class PostService {
             throw new RuntimeException(e);
         }
 
-        Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
+        Connection connection = db.ConfDB();
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sqlQuery);
 
@@ -81,7 +80,7 @@ public class PostService {
         }
 
 
-        Connection connection = DriverManager.getConnection(ConnectionString, UserName, Password);
+        Connection connection = db.ConfDB();
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
         statement.setString(1, title);
