@@ -19,7 +19,7 @@
         <br>
         <p>${error}</p>
         <br>
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

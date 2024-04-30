@@ -10,14 +10,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        System.out.println(email);
-        System.out.println(password);
+
         if (email.isEmpty() || password.isEmpty()) {
             request.setAttribute("error", "Username or password is empty");
             doGet(request, response);
@@ -25,16 +26,21 @@ public class LoginServlet extends HttpServlet {
             UserService userService = new UserService();
             try {
                 User user = userService.GetUser(email);
+
                 String userEmail = user.getEmail();
                 String userPassword = user.getPassword();
-                if (userEmail == email && userPassword == password) {
-                    getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+
+                if (Objects.equals(userEmail, email) && Objects.equals(userPassword, password)) {
+                    response.sendRedirect("index.jsp");
                 }
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
     }
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
     }

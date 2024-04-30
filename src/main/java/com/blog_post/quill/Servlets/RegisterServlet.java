@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/register")
-public class UserServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email= request.getParameter("email");
@@ -20,10 +20,6 @@ public class UserServlet extends HttpServlet {
         String password= request.getParameter("password");
         String confirmPassword= request.getParameter("confirmPassword");
 
-        System.out.println(email);
-        System.out.println(userName);
-        System.out.println(password);
-        System.out.println(confirmPassword);
 
         if(userName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty())
         {
@@ -41,8 +37,6 @@ public class UserServlet extends HttpServlet {
                     if (userEmail == null) {
                         try {
                             userService.postUser(email, userName, password);
-                            System.out.println("account has been created");
-
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
