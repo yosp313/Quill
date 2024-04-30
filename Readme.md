@@ -21,8 +21,8 @@
  - [] Implement the Proxy deign Pattern to cache
 
 ### Hussein Amr:
-- [] Create a Servlet to handle the `/register` route
-- [] Create a Servlet to handle the `/login` route
+- [x] Create a Servlet to handle the `/register` route
+- [x] Create a Servlet to handle the `/login` route
 - [] Delete Account
 
 ### Youssef Amr:
