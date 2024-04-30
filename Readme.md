@@ -23,6 +23,7 @@
 ### Hussein Amr:
 - [x] Create a Servlet to handle the `/register` route
 - [x] Create a Servlet to handle the `/login` route
+- [] Update the user's password and username
 - [] Delete Account
 
 ### Youssef Amr:
