@@ -15,7 +15,10 @@
  - [x] Make the user Read all the posts
  - [x] Make the user Create his posts
  - [x] Make the user read a single post
-- [x] Handle the `/blogs` route 
+ - [x] Handle the `/blogs` route
+ - [x] Implement cookies that store the user's id
+ - [x] Implement the update and delete posts services
+ - [] Implement logging out
  - [] Make the user Update his posts
  - [] Make the user Delete his Posts
  - [] Implement the Proxy deign Pattern to cache
@@ -25,6 +28,7 @@
 - [x] Create a Servlet to handle the `/login` route
 - [] Update the user's password and username
 - [] Delete Account
+
 
 ### Youssef Amr:
 - [x] Create a logo for QUILL
