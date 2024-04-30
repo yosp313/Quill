@@ -92,4 +92,48 @@ public class PostService {
         statement.close();
         connection.close();
     }
+
+    public void deletePost(String postId) throws SQLException {
+        sqlQuery = "DELETE FROM posts WHERE id=?";
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }
+
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, postId);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
+
+    public void updatePost(String title, String content, String postId) throws SQLException {
+        sqlQuery = "UPDATE posts SET title = ?, content = ?, user_id = ? WHERE id = ?";
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }
+
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, title);
+        statement.setString(2, content);
+        statement.setString(3, postId);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
+
+
 }

@@ -11,6 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-    ${posts}
+<form action="/blogs" method="post">
+    <input placeholder="title" name="title"/>
+    <input placeholder="content" name="content"/>
+    <button type="submit">Submit</button>
+</form>
+
+${message}
 </body>
 </html>
