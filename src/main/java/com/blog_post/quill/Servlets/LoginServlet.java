@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
                 String userPassword = user.getPassword();
                 Integer userId = user.getId();
 
+                
                 if (Objects.equals(userEmail, email) && Objects.equals(userPassword, password)) {
                     response.sendRedirect("/?id=" + userId);
                 }
