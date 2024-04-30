@@ -14,6 +14,7 @@ import java.util.Objects;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String email = request.getParameter("email");
@@ -29,9 +30,10 @@ public class LoginServlet extends HttpServlet {
 
                 String userEmail = user.getEmail();
                 String userPassword = user.getPassword();
+                Integer userId = user.getId();
 
                 if (Objects.equals(userEmail, email) && Objects.equals(userPassword, password)) {
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("/?id=" + userId);
                 }
 
             } catch (SQLException e) {
