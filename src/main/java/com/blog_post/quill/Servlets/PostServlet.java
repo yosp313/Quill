@@ -4,6 +4,7 @@ import com.blog_post.quill.Models.Post;
 import com.blog_post.quill.Services.PostService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +22,20 @@ public class PostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String title = req.getParameter("title");
         String content = req.getParameter("content");
-        String user_id = req.getParameter("user_id");
+
+        Cookie[] cookies = req.getCookies();
+
+        Cookie userCookie = null;
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("user_id")) {
+                    userCookie = cookie;
+                }
+            }
+        }
+
+        String user_id = userCookie.getValue();
 
         System.out.println(title + " " + content + " " + user_id);
 
