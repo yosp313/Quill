@@ -4,6 +4,7 @@ import com.blog_post.quill.Models.User;
 import com.blog_post.quill.Services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,14 +16,27 @@ import java.sql.SQLException;
     public class changeUserName extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
+        Cookie[] cookies = request.getCookies();
+
+        Cookie userCookie = null;
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("email")) {
+                    userCookie = cookie;
+                }
+            }
+        }
+
+        String userEmail = userCookie.getValue();
+
         String newUserName = request.getParameter("newUserName");
-        if(email.isEmpty() || newUserName.isEmpty()){
-            request.setAttribute("error", "email or New User Name cannot be empty");
+        if(newUserName.isEmpty()){
+            request.setAttribute("error", "New User Name cannot be empty");
         }else{
             UserService userService = new UserService();
             try {
-                User user = userService.GetUser(email);
+                User user = userService.GetUser(userEmail);
 
                 user.setUsername(newUserName);
 
