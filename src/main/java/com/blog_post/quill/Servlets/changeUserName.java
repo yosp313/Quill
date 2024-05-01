@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet ("/changeUserName")
+@WebServlet ("/change-user-name")
     public class changeUserName extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,8 +23,9 @@ import java.sql.SQLException;
             UserService userService = new UserService();
             try {
                 User user = userService.GetUser(email);
-                String userName = user.getUsername();
-                userName=newUserName;
+
+                user.setUsername(newUserName);
+
             }catch (SQLException e) {
             throw new RuntimeException(e);
             }
