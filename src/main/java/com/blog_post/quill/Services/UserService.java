@@ -17,6 +17,7 @@ public class UserService {
         sqlQuery = "SELECT * FROM users WHERE email = ?";
 
 
+
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
         }catch (ClassNotFoundException e){
