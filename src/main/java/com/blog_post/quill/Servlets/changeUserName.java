@@ -27,22 +27,21 @@ import java.sql.SQLException;
                 }
             }
         }
-
         String userEmail = userCookie.getValue();
 
+
         String newUserName = request.getParameter("newUserName");
-        if(newUserName.isEmpty()){
-            request.setAttribute("error", "New User Name cannot be empty");
-        }else{
-            UserService userService = new UserService();
-            try {
-                User user = userService.GetUser(userEmail);
 
-                user.setUsername(newUserName);
+        UserService userService = new UserService();
 
-            }catch (SQLException e) {
+        try {
+            User user = userService.GetUser(userEmail);
+            user.setUsername(newUserName);
+
+            userService.updateUser(user);
+
+        }catch (SQLException e) {
             throw new RuntimeException(e);
-            }
         }
     }
 
