@@ -11,7 +11,8 @@
     <title></title>
 </head>
 <body>
-    <form action="/changeUserName" method="put">
+    <form action="/changeUserName" method="post">
+        <input type="hidden" name="_method" value="put">
         <label>Email</label>
         <input type="email" name="email" id="mail">
         <br>
