@@ -36,9 +36,13 @@ public class LoginServlet extends HttpServlet {
 
                 if (Objects.equals(userEmail, email) && Objects.equals(userPassword, password)) {
                     Cookie cookie = new Cookie("user_id", userId.toString());
+                    Cookie emailCookie = new Cookie("email", email);
+
                     cookie.setMaxAge(60 * 60 * 24);
+                    emailCookie.setMaxAge(60 * 60 * 24);
 
                     response.addCookie(cookie);
+                    response.addCookie(emailCookie);
 
                     response.sendRedirect("blogs");
                 }
