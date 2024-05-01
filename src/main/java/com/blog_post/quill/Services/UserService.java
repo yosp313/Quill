@@ -84,4 +84,23 @@ public class UserService {
         statement.close();
         connection.close();
     }
+
+    public void deleteUser(String email) throws SQLException {
+        sqlQuery = "DELETE FROM users WHERE email = ?";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, email);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
 }
