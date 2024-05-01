@@ -113,7 +113,7 @@ public class PostService {
         connection.close();
     }
 
-    public void updatePost(String title, String content, String postId) throws SQLException {
+    public void updatePost(Post post) throws SQLException {
         sqlQuery = "UPDATE posts SET title = ?, content = ?, user_id = ? WHERE id = ?";
 
         try{
@@ -125,9 +125,12 @@ public class PostService {
         Connection connection = db.ConfDB();
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-        statement.setString(1, title);
-        statement.setString(2, content);
-        statement.setString(3, postId);
+        Integer postId = post.getId();
+
+        statement.setString(1, post.getTitle());
+        statement.setString(2, post.getContent());
+        statement.setString(3, post.getUser_id());
+        statement.setString(4, postId.toString());
 
         statement.executeUpdate();
 
