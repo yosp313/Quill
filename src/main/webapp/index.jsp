@@ -15,14 +15,15 @@
 <div>
     <h1 class="Title"> Unlock a world of possibilities with just a <span class="TitleColor">QUILL</span>.</h1>
 </div>
-<div class="row">
-    <div class="column">
-        <img src="Assets/HeroImg.png" alt="Snow">
-    </div>
-    <div class="column">
-        <img src="Assets/Blog.png" alt="Forest">
-    </div>
-</div>
+
+<section>
+    <img src="ASSETS/HeroImg.png" >
+
+    <img src="ASSETS/Blog.png" >
+
+</section>
+
+
 <br>
 
 <div>
