@@ -18,7 +18,6 @@
  - [x] Handle the `/blogs` route
  - [x] Implement cookies that store the user's id
  - [x] Implement the update and delete posts services
- - [] Implement logging out
  - [] Make the user Update his posts
  - [] Make the user Delete his Posts
  - [] Implement the Proxy deign Pattern to cache
@@ -26,9 +25,9 @@
 ### Hussein Amr:
 - [x] Create a Servlet to handle the `/register` route
 - [x] Create a Servlet to handle the `/login` route
-- [] Update the user's password and username
-- [] Delete Account
-
+- [x] Update the user's password and username
+- [x] Delete Account
+- [] Implement logging out
 
 ### Youssef Amr:
 - [x] Create a logo for QUILL
