@@ -37,7 +37,7 @@ public class PostServlet extends HttpServlet {
 
         req.setAttribute("message", "Blog Created Successfully!");
 
-        req.getRequestDispatcher("/posts.jsp").forward(req, resp);
+        resp.sendRedirect("/blogs");
     }
 
     @Override

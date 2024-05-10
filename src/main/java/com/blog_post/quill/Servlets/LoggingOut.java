@@ -9,13 +9,13 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet ("/Log-Out")
+@WebServlet ("/logout")
 public class LoggingOut extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();
         response.sendRedirect("/index.jsp");
-        getServletContext().getRequestDispatcher("/LoggingOut.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/logout.jsp").forward(request, response);
     }
 }

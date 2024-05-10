@@ -12,14 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/blogs" method="post">
-    <input placeholder="title" name="title"/>
-    <input placeholder="content" name="content"/>
-    <button type="submit">Submit</button>
-</form>
-
-${message}
-
+<button><a href="postForm.jsp">New Post</a></button>
 <ul>
     <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
     <% for (Post blog : blogs) {%>
