@@ -11,11 +11,7 @@
     <title></title>
 </head>
 <body>
-    <form action="/changeUserName" method="post">
-        <input type="hidden" name="_method" value="put">
-        <label>Email</label>
-        <input type="email" name="email" id="mail">
-        <br>
+    <form action="/change-user-name" method="post">
         <label>New User Name</label>
         <input type="text" name="newUserName" id="nUserName">
         <br>

@@ -4,10 +4,7 @@ import com.blog_post.quill.Models.User;
 import com.blog_post.quill.Services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -35,16 +32,14 @@ public class LoginServlet extends HttpServlet {
 
 
                 if (Objects.equals(userEmail, email) && Objects.equals(userPassword, password)) {
-                    Cookie cookie = new Cookie("user_id", userId.toString());
-                    Cookie emailCookie = new Cookie("email", email);
-
-                    cookie.setMaxAge(60 * 60 * 24);
-                    emailCookie.setMaxAge(60 * 60 * 24);
-
-                    response.addCookie(cookie);
-                    response.addCookie(emailCookie);
+                    HttpSession session = request.getSession();
+                    session.setAttribute("userId", userId);
+                    session.setAttribute("userEmail", userEmail);
 
                     response.sendRedirect("blogs");
+                }
+                else {
+                    request.setAttribute("error", "Wrong username or password");
                 }
 
             } catch (SQLException e) {
