@@ -17,6 +17,7 @@ public class UserService {
         sqlQuery = "SELECT * FROM users WHERE email = ?";
 
 
+
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
         }catch (ClassNotFoundException e){
@@ -56,6 +57,27 @@ public class UserService {
         statement.setString(1, Email);
         statement.setString(2, userName);
         statement.setString(3, Password);
+
+        statement.executeUpdate();
+
+        statement.close();
+        connection.close();
+    }
+
+    public void updateUser(User user) throws SQLException {
+        sqlQuery = "UPDATE users SET username = ?, password = ? WHERE email = ?";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, user.getUsername());
+        statement.setString(2, user.getPassword());
+        statement.setString(3, user.getEmail());
 
         statement.executeUpdate();
 

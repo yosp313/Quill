@@ -19,6 +19,7 @@
  - [x] Implement cookies that store the user's id
  - [x] Implement the update and delete posts services
  - [] Implement logging out
+ - [] Encrypt the cookies
  - [] Make the user Update his posts
  - [] Make the user Delete his Posts
  - [] Implement the Proxy deign Pattern to cache

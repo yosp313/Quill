@@ -69,7 +69,7 @@ public class PostService {
 
     }
 
-    public void postBlog(String title, String content, String authorId) throws SQLException {
+    public void postBlog(String title, String content, Integer authorId) throws SQLException {
         sqlQuery = "INSERT INTO posts (title, content, user_id)\n" +
                 "SELECT ?, ?, id FROM users WHERE id = ? LIMIT 1;";
 
@@ -85,7 +85,7 @@ public class PostService {
 
         statement.setString(1, title);
         statement.setString(2, content);
-        statement.setString(3, authorId);
+        statement.setInt(3, authorId);
 
         statement.executeUpdate();
 
