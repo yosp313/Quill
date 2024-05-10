@@ -18,8 +18,7 @@
  - [x] Handle the `/blogs` route
  - [x] Implement cookies that store the user's id
  - [x] Implement the update and delete posts services
- - [] Implement logging out
- - [] Encrypt the cookies
+ - [x] Display all the posts for the user
  - [] Make the user Update his posts
  - [] Make the user Delete his Posts
  - [] Implement the Proxy deign Pattern to cache
@@ -29,7 +28,7 @@
 - [x] Create a Servlet to handle the `/login` route
 - [x] Update the user's password
 - [x] Update the user's username
-- [] Delete Account
+- [x] Logging out
 
 
 ### Youssef Amr:
