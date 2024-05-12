@@ -1,20 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: hussenarafa
-  Date: 30/04/2024
-  Time: 5:29 AM
+  User: youss
+  Date: 5/10/2024
+  Time: 6:13 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="Login.css">
-
     <style>
-
         .logo img {
             margin-left: 1%;
             margin-top: 1%;
@@ -121,16 +117,14 @@
         }
         .Form p span a{
             color: #1D8CDB;
-        }
-    </style>
+        }</style>
 
-</head>
-<body>
+ </head>
 
 <header>
     <a href="#" class="logo"><img src="Assets/Logo.png"></a>
 </header>
-
+<body>
 <section class="ImgPart">
     <h1 class="Title"> Writing is our thing!</h1>
     <br>
@@ -140,22 +134,26 @@
 <section class="Form">
 
     <section class="TextField">
-        <h2>Login</h2>
+        <h2>Registration</h2>
         <a>Start your creative journey with Quill</a>
         <div class="Form">
 
-
-            <form action="loginController.jsp" method="post"> <!--Add database section-->
+            <form action="registerController.jsp" > <!--Add database section-->
+                <label for="Fname">First Name</label>
+                <input type="text" id="Fname" name="Fname" placeholder="Enter your first name here"><br>
+                <label for="Lname">Last Name</label>
+                <input type="text" id="Lname" name="Lname" placeholder="Enter your last name here"><br>
                 <label for="email">Email</label>
-                Username:  <input type="text" id="email" name="email" placeholder="Enter your email here"><br>
+                <input type="text" id="email" name="email" placeholder="Enter your email here"><br>
                 <label for="Password">Password</label>
-                Password:  <input type="text" id="Password" name="Password" placeholder="Enter your password here"><br>
-                <input type="submit" value="Login"  class="Submitbtn">
+                <input type="text" id="Password" name="Password" placeholder="Enter your password here"><br>
+                <input type="submit" value="Register" class="Submitbtn" >
             </form>
         </div>
-        <p>Don’t have an account? <span><a href="Registration.jsp">Register</a></span></p>
+        <p>Already have an account? <span><a href="Login.html">Login</a></span></p>
     </section>
 </section>
+
 
 
 </body>

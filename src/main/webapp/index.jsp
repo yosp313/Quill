@@ -5,11 +5,63 @@
 <head>
     <title>QuiLL</title>
     <link rel="stylesheet" href="STYLE/Style-Main.css">
+
+    <style>
+
+
+        .logo img {
+            margin-left: 1%;
+            margin-top: 1%;
+            width: 3%;
+            height: auto;
+        }
+        .Title{
+            margin-top: 5%;
+            font-size: 50px;
+            font-family: Arial;
+            margin-left: 1%;
+        }
+
+        .TitleColor{
+            color: #1D8CDB;
+        }
+
+        .HeroImg{
+            margin-left: 15%;
+            height: 100%;
+        }
+
+        .HeroBlog{
+            float: right;
+
+        }
+
+
+        .GetStartedbtn{
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 4px;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: #1D8CDB;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25%;
+        }
+        .GetStartedbtn a{
+            color: white;
+            font-family: Arial;
+            font-weight: 300;
+
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo"><img src="Assets/Logo.png"></a>
+    <a href="#" class="logo"><img src="src/main/webapp/ASSETS/Logo.png"></a>
 </header>
 
 <div>
@@ -17,9 +69,9 @@
 </div>
 
 <section>
-    <img src="ASSETS/HeroImg.png" >
+    <img src="Assets/HeroImg.png" >
 
-    <img src="ASSETS/Blog.png" >
+    <img src="Assets/Blog.png" >
 
 </section>
 
@@ -27,7 +79,7 @@
 <br>
 
 <div>
-    <button class="GetStartedbtn" type="button"><a>Get Started!</a></button>
+    <button class="GetStartedbtn" type="button"><a  href="Login.jsp">Get Started!</a></button>
 
 </div>
 
