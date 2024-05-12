@@ -35,6 +35,7 @@
         min-height: 100vh;
     }
     .logo {
+        padding-left: 5%;
         padding-right: 30px;
         padding-top: 10px;
     }
@@ -167,7 +168,7 @@
         opacity: 1;
     }
     .frombg{
-        padding-top: 5%;
+        padding-top: 2%;
         padding-left: 30%;
     }
     .newblog{
@@ -196,9 +197,9 @@
     <nav>
         <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
             <ul>
-                <li> <a href="#pacpledge"><i class="fa fa-fw fa-home"></i>Home</a> </li>
-                <li> <a href="#divmedia"><i class="fa fa-fw fa-search"></i>My Blog</a> </li>
-                <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i>Sign-Out</a> </li>
+                <li> <a href="#pacpledge"><i class="fa fa-fw fa-home"></i> Home</a> </li>
+                <li> <a href="#divmedia"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
+                <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i> Sign-Out</a> </li>
             </ul>
         </div>
     </nav>
@@ -209,7 +210,7 @@
 <div class="frombg">
     <section class="Form">
         <form action="" method="post" class="formtext">
-            <button class="newblog" ><a href="PostWriting.jsp">What is on your mind? <i class="fa fa-fw fa-home"></i></a></button>
+            <button class="newblog" ><a href="PostWriting.jsp">What is on your mind? <i class="fa-brands fa-rocketchat"></i></a></button>
 
         </form>
     </section>
