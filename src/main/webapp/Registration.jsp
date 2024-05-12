@@ -137,17 +137,22 @@
         <h2>Registration</h2>
         <a>Start your creative journey with Quill</a>
         <div class="Form">
-
-            <form action="registerController.jsp" > <!--Add database section-->
-                <label for="Fname">First Name</label>
-                <input type="text" id="Fname" name="Fname" placeholder="Enter your first name here"><br>
-                <label for="Lname">Last Name</label>
-                <input type="text" id="Lname" name="Lname" placeholder="Enter your last name here"><br>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Enter your email here"><br>
-                <label for="Password">Password</label>
-                <input type="text" id="Password" name="Password" placeholder="Enter your password here"><br>
-                <input type="submit" value="Register" class="Submitbtn" >
+            <form action="/Register" method="post">
+                <label>E-Mail</label>
+                <input type="email" name="email" id="mail">
+                <br>
+                <label>User Name</label>
+                <input type="text" name="userName" id="Name">
+                <br>
+                <label>Password</label>
+                <input type="password" name="password" id="pass">
+                <br>
+                <label>Confirm Password</label>
+                <input type="Password" name="confirmPassword" id="confirmPass">
+                <br>
+                <p>${error}</p>
+                <br>
+                <button type="submit">Register</button>
             </form>
         </div>
         <p>Already have an account? <span><a href="Login.html">Login</a></span></p>
