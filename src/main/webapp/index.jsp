@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="STYLE/Style-Main.css">
 
     <style>
-
-
         .logo img {
             margin-left: 1%;
             margin-top: 1%;
@@ -65,7 +63,10 @@
 </header>
 
 <div>
-    <h1 class="Title"> Unlock a world of possibilities with just a <span class="TitleColor">QUILL</span>.</h1>
+    <br>
+    <img src="ASSETS/Blog2.png" class="HeroBlog" >
+    <h1 class="Title"> Unlock a world of possibilities with just a <span class="TitleColor">QUILL.</span></h1>
+    <img src="ASSETS/HeroImg.png" class="HeroImg">
 </div>
 
 <section>
