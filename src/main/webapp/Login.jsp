@@ -31,6 +31,8 @@
 
 
         .LoginImg{
+
+            border-image-source: url(././Assets/LoginImg.png);
             margin: 1%;
             width: 100%;
         }
@@ -122,19 +124,24 @@
         .Form p span a{
             color: #1D8CDB;
         }
+        .Form .error{
+            font-size: 15px;
+            font-weight: bolder;
+        }
     </style>
 
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo"><img src="Assets/Logo.png"></a>
+    <a href="#" class="logo"><img src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE"></a>
 </header>
 
 <section class="ImgPart">
     <h1 class="Title"> Writing is our thing!</h1>
     <br>
-    <img src="Assets/LoginImg.png" class="LoginImg">
+    <p id = "LoginImg"></p>
+    <img src="https://scontent.fcai20-3.fna.fbcdn.net/v/t39.30808-6/438077745_769472205252456_203166154341488787_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHgBkHwxi_hQ77hwH-vUGX9LrOtVvBLgB4us61W8EuAHmz3eil2MnHRoUXsrZT16N4Qm6BZ7w1OmCyfr5XZgdrO&_nc_ohc=DEYVEDbM8dIQ7kNvgHOrZmO&_nc_ht=scontent.fcai20-3.fna&oh=00_AYApKXyi-RGrvEhp4jbSAQsJv2xouVvF3y2N6uFRAXcvIw&oe=6646E7ED" class="LoginImg">
 </section>
 
 <section class="Form">
@@ -147,14 +154,12 @@
 
             <form action="/login" method="post">
                 <label>Email</label>
-                <input type="text" name="email" id="mail">
-                <br>
+                <input type="text" id="mail" name="email" placeholder="Enter your email here"><br>
                 <label>Password</label>
-                <input type="password" name="password" id="pass">
+                <input type="text" id="pass" name="Password" placeholder="Enter your password here"><br>
+                <p class="error">${error}</p>
                 <br>
-                <p>${error}</p>
-                <br>
-                <button type="submit">Login</button>
+                <input type="submit" value="Login"  class="Submitbtn">
             </form>
         </div>
         <p>Don’t have an account? <span><a href="Registration.jsp">Register</a></span></p>

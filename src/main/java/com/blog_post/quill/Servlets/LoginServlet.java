@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (email.isEmpty() || password.isEmpty()) {
-            request.setAttribute("error", "Username or password is empty");
+            request.setAttribute("error", "Email or Password is empty");
             doGet(request, response);
         }else {
             UserService userService = new UserService();

@@ -122,13 +122,13 @@
  </head>
 
 <header>
-    <a href="#" class="logo"><img src="Assets/Logo.png"></a>
+    <a href="#" class="logo"><img src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE"></a>
 </header>
 <body>
 <section class="ImgPart">
     <h1 class="Title"> Writing is our thing!</h1>
     <br>
-    <img src="Assets/LoginImg.png" class="LoginImg">
+    <img src="https://scontent.fcai20-3.fna.fbcdn.net/v/t39.30808-6/438077745_769472205252456_203166154341488787_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHgBkHwxi_hQ77hwH-vUGX9LrOtVvBLgB4us61W8EuAHmz3eil2MnHRoUXsrZT16N4Qm6BZ7w1OmCyfr5XZgdrO&_nc_ohc=DEYVEDbM8dIQ7kNvgHOrZmO&_nc_ht=scontent.fcai20-3.fna&oh=00_AYApKXyi-RGrvEhp4jbSAQsJv2xouVvF3y2N6uFRAXcvIw&oe=6646E7ED" class="LoginImg">
 </section>
 
 <section class="Form">
@@ -137,29 +137,22 @@
         <h2>Registration</h2>
         <a>Start your creative journey with Quill</a>
         <div class="Form">
-            <form action="/Register" method="post">
-                <label>E-Mail</label>
-                <input type="email" name="email" id="mail">
-                <br>
-                <label>User Name</label>
-                <input type="text" name="userName" id="Name">
-                <br>
+            <form action="/register" method="post">
+                <label>Email</label>
+                <input type="text" id="mail" name="email" placeholder="Enter your email here"><br>
+                <label>Username</label>
+                <input type="text" id="Name" name="userName" placeholder="Enter your username here"><br>
                 <label>Password</label>
-                <input type="password" name="password" id="pass">
-                <br>
-                <label>Confirm Password</label>
-                <input type="Password" name="confirmPassword" id="confirmPass">
-                <br>
+                <input type="text" id="pass" name="Password" placeholder="Enter your password here"><br>
+                <label> Confirm password</label>
+                <input type="text" id="confirmPass" name="Password" placeholder="Enter your password again"><br>
                 <p>${error}</p>
                 <br>
-                <button type="submit">Register</button>
+                <button type="submit" class="Submitbtn">Register</button>
             </form>
         </div>
-        <p>Already have an account? <span><a href="Login.html">Login</a></span></p>
+        <p>Already have an account? <span><a href="Login.jsp">Login</a></span></p>
     </section>
 </section>
-
-
-
 </body>
 </html>
