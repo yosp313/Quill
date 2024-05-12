@@ -145,12 +145,16 @@
         <div class="Form">
 
 
-            <form action="loginController.jsp" method="post"> <!--Add database section-->
-                <label for="email">Email</label>
-                Username:  <input type="text" id="email" name="email" placeholder="Enter your email here"><br>
-                <label for="Password">Password</label>
-                Password:  <input type="text" id="Password" name="Password" placeholder="Enter your password here"><br>
-                <input type="submit" value="Login"  class="Submitbtn">
+            <form action="/login" method="post">
+                <label>Email</label>
+                <input type="text" name="email" id="mail">
+                <br>
+                <label>Password</label>
+                <input type="password" name="password" id="pass">
+                <br>
+                <p>${error}</p>
+                <br>
+                <button type="submit">Login</button>
             </form>
         </div>
         <p>Don’t have an account? <span><a href="Registration.jsp">Register</a></span></p>
