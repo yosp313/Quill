@@ -129,7 +129,6 @@
             padding-right: 20%;
             justify-content: center;
             align-items: center;
-            padding-top: 5%;
         }
 
 
@@ -192,12 +191,12 @@
             opacity: 0.9;
             font-size: 25px;
             font-family: Arial, Helvetica, sans-serif;
+
         }
 
         .Submitbtn:hover {
             opacity: 1;
         }
-
 
         .Form p{
             font-family: Arial, Helvetica, sans-serif;
@@ -224,6 +223,7 @@
             position: relative; /* Use relative positioning */
             right: 20px;
         }
+
     </style>
     <header id="topnav">
         <nav>
@@ -254,10 +254,12 @@
         <div class="Form">
 
 
-            <form action="/login" method="post">
+            <form action="/change-user-name" method="post">
                 <label>Username</label>
                 <input type="text" id="Name" name="Username" ><br>
                 <input type="submit" value=" Change username"  class="usernamebtn"><br><br>
+            </form>
+            <form action="/changePassword" method="post">
                 <label>Password</label> <br>
                 <input type="text" id="pass" name="Password"><br>
                 <input type="submit" value="Change password"  class="passbtn"><br>
@@ -266,7 +268,6 @@
                 <input type="submit" value="Save"  class="Submitbtn">
             </form>
         </div>
-        <p>Don’t have an account? <span><a href="Registration.jsp">Register</a></span></p>
     </section>
 </section>
 
