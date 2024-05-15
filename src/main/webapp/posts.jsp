@@ -18,6 +18,7 @@
 <body>
 <button><a href="postForm.jsp">New Post</a></button>
 <ul>
+    <%if(request.getAttribute("posts") != null){%>
     <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
     <% for (Post blog : blogs) {%>
     <li>
@@ -25,6 +26,8 @@
         <p><%= blog.getContent() %></p>
     </li>
     <%}%>
+    <%}%>
 </ul>
+${message}
 </body>
 </html>
