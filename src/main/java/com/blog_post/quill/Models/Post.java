@@ -1,10 +1,13 @@
 package com.blog_post.quill.Models;
 
+import java.time.Instant;
+
 public class Post {
     int id;
     String title;
     String content;
     String user_id;
+    Instant timeStamp;
 
     public Post(String title, String content, String userId) {
         this.title = title;
@@ -45,5 +48,9 @@ public class Post {
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
+    }
+
+    public Instant getTimestamp() {
+        return timeStamp;
     }
 }

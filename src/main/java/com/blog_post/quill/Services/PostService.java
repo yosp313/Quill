@@ -1,13 +1,14 @@
 package com.blog_post.quill.Services;
 
 import com.blog_post.quill.Configs.DB;
+import com.blog_post.quill.Interfaces.BlogPostDAO;
 import com.blog_post.quill.Models.Post;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostService {
+public class PostService implements BlogPostDAO {
     private static String sqlQuery;
     private static DB db = new DB();
 
@@ -114,7 +115,7 @@ public class PostService {
     }
 
     public void updatePost(Post post) throws SQLException {
-        sqlQuery = "UPDATE posts SET title = ?, content = ?, user_id = ? WHERE id = ?";
+        sqlQuery = "UPDATE posts SET title = ?, content = ? WHERE id = ?";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -130,12 +131,43 @@ public class PostService {
         statement.setString(1, post.getTitle());
         statement.setString(2, post.getContent());
         statement.setString(3, post.getUser_id());
-        statement.setString(4, postId.toString());
 
         statement.executeUpdate();
 
         statement.close();
         connection.close();
+    }
+
+    public boolean CheckAuthor(String postId, Integer userId) throws SQLException {
+        sqlQuery = "SELECT user_id FROM posts WHERE id=?";
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }
+
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, postId);
+
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            String author = resultSet.getString("user_id");
+
+            if (userId.equals(author)) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+        return false;
     }
 
 
