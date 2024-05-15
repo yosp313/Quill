@@ -105,24 +105,48 @@
             font-size: 20px;
             word-wrap: break-word;
         }
+        .fa-solid.fa-user {
+            font-size: 5rem; /* Adjust the size of the icon */
+            cursor: pointer;
+        }
+        .fa-solid.fa-user {
+            position: relative; /* Use relative positioning */
+            right: 20px; /* Adjust the left position */
+        }
+        .Profile{
+            position: relative; /* Use relative positioning */
+            right: 20px;
+        }
     </style>
     <title>Blog-Post</title>
     <header id="topnav">
         <nav>
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
                 <ul>
-                    <li> <a href="Home.jsp"><i class="fa fa-fw fa-home"></i> Home</a> </li>
-                    <li> <a href="#divmedia"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
-                    <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i> Sign-Out</a> </li>
+                    <li> <a href="/blogs"><i class="fa fa-fw fa-home"></i> Home</a> </li>
+                    <li> <a href="MyBlogs.jsp"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
+
+                    <li>
+                        <form action="/logout" method="get">
+                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                        </form>
+                    </li>
                 </ul>
-                <img class="PPimage" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
+                <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>
 
         </nav>
     </header>
 </head>
 <body>
-        <h3 class="Username">Youssef Ayman</h3>
+
+    <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
+    <% for (Post blog : blogs) {%>
+
+        <h2><%= blog.getTitle() %></h2>
+        <p><%= blog.getContent() %></p>
+
+    <%}%>
         <h1 class="Title"> How to be A GOOODDD SUUUUUUU</h1>
         <P class="Content">dfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfddfoghjfdoiugjdfoigjhdfuioghfdughfd</P>
 </body>
