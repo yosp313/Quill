@@ -17,7 +17,7 @@
 3. MySQL
 4. HTML
 5. CSS
-6. IntelliJ
+6. IntelliJ IDEA
 7. Apache Tomcat
 8. Figma
 
