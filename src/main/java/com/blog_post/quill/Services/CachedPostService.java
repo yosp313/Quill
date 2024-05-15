@@ -31,7 +31,7 @@ public class CachedPostService implements BlogPostDAO {
     public List<Post> getAllBlogs() throws SQLException {
         cleanupExpiredEntries();
 
-        if (blogCache.isEmpty() &&  ttl-syste) {
+        if (blogCache.isEmpty()) {
             try {
                 List<Post> posts = blogService.getAllBlogs();
                 blogCache.putAll(posts.stream().collect(Collectors.toMap(Post::getId, blog -> blog)));
