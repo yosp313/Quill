@@ -1,21 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: youss
-  Date: 5/12/2024
-  Time: 7:21 PM
+  Date: 5/16/2024
+  Time: 1:22 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="Homestyle.css">
-    <title>Home-Feed</title>
+
     <style>
         body {
             margin: 0;
@@ -57,7 +51,24 @@
             align-items: baseline;
             flex: 1 0 0%;
         }
-        #navbarcontainer a {
+        #navbarcontainer a  {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            display: block;
+            color: #1D8CDB;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        #navbarcontainer signout{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            display: block;
+            color: #1D8CDB;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        #navbarcontainer button{
             font-family: Arial, Helvetica, sans-serif;
             padding: 10px;
             display: block;
@@ -109,10 +120,10 @@
         }
         .Form{
             box-shadow: 0px  0px  15px;
-             border-radius:36px ;
+            border-radius:36px ;
             border-color: #0000003a;
             width: 60%;
-            height: 60%;
+            height: 20%;
             padding-bottom: 5%;
             padding-left: 5%;
             padding-right: 5%;
@@ -134,7 +145,7 @@
 
         }
         .Form .Title{
-             font-size: 20px;
+            font-size: 20px;
             color: #1D8CDB;
         }
 
@@ -173,7 +184,68 @@
         .frombg{
             padding-top: 2%;
             padding-left: 30%;
+            padding-bottom: 3%;
         }
+        .newblog{
+            background-color: white;
+            justify-content: flex-start;
+            color: #1D8CDB;
+            padding-right: 30%;
+            padding: 5px 10px;
+            border: none;
+            border-radius:11px ;
+            width: 100%;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .newblog i{
+            padding-left: 40%;
+
+        }
+        .newblog a{
+            color: #1D8CDB;
+            text-decoration: none;
+        }
+        .Postsbg{
+            padding-left: 17%;
+        }
+
+        .Posts{
+            box-shadow: 0px  0px  15px;
+            border-radius:36px ;
+            border-color: #0000003a;
+            width: 80%;
+            height: 60%;
+            padding-bottom: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1%;
+            overflow: hidden;
+        }
+        .Posts a{
+            text-decoration: none;
+        }
+
+        .Posts .postTitle{
+            color: #1D8CDB;
+            font-weight: bolder;
+            font-size: 50px;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: start;
+        }
+        .Posts .postContant{
+            color: #1D8CDB;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+            word-wrap: break-word;
+        }
+
         .fa-solid.fa-user {
             font-size: 5rem; /* Adjust the size of the icon */
             cursor: pointer;
@@ -187,6 +259,7 @@
             right: 20px;
         }
     </style>
+    <title>My BLogs</title>
     <header id="topnav">
         <nav>
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
@@ -207,17 +280,20 @@
     </header>
 </head>
 <body>
-<div class="frombg">
-    <section class="Form">
-        <form action="/blogs" method="post" class="formtext">
-
-            <input placeholder="Title" type="text" name="title" class="Title"/><br>
-            <input placeholder="Content" type="text" name="content" class="Content"/> <br>
-            <button type="submit" class="Submitbtn">Submit</button>
-        </form>
-    </section>
-</div>
-
-${message}
+<section class ="Postsbg" >
+    <button class="Posts"><a href="//post page">
+        <h2 class="postTitle">test</h2>
+        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
+    </a>
+    </button>
+    <br>
+    <br>
+    <br>
+    <button class="Posts"><a href="//post page">
+        <h2 class="postTitle">test</h2>
+        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
+    </a>
+        </button>
+</section>
 </body>
 </html>
