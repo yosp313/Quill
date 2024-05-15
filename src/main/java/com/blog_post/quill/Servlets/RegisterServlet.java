@@ -37,6 +37,7 @@ public class RegisterServlet extends HttpServlet {
                     if (userEmail == null) {
                         try {
                             userService.postUser(email, userName, password);
+                            response.sendRedirect("login");
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }

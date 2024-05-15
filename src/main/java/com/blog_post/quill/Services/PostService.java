@@ -1,13 +1,14 @@
 package com.blog_post.quill.Services;
 
 import com.blog_post.quill.Configs.DB;
+import com.blog_post.quill.Interfaces.BlogPostDAO;
 import com.blog_post.quill.Models.Post;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostService {
+public class PostService implements BlogPostDAO {
     private static String sqlQuery;
     private static DB db = new DB();
 
@@ -69,7 +70,7 @@ public class PostService {
 
     }
 
-    public void postBlog(String title, String content, String authorId) throws SQLException {
+    public void postBlog(String title, String content, Integer authorId) throws SQLException {
         sqlQuery = "INSERT INTO posts (title, content, user_id)\n" +
                 "SELECT ?, ?, id FROM users WHERE id = ? LIMIT 1;";
 
@@ -85,7 +86,7 @@ public class PostService {
 
         statement.setString(1, title);
         statement.setString(2, content);
-        statement.setString(3, authorId);
+        statement.setInt(3, authorId);
 
         statement.executeUpdate();
 
@@ -113,8 +114,8 @@ public class PostService {
         connection.close();
     }
 
-    public void updatePost(String title, String content, String postId) throws SQLException {
-        sqlQuery = "UPDATE posts SET title = ?, content = ?, user_id = ? WHERE id = ?";
+    public void updatePost(Post post) throws SQLException {
+        sqlQuery = "UPDATE posts SET title = ?, content = ? WHERE id = ?";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -125,14 +126,48 @@ public class PostService {
         Connection connection = db.ConfDB();
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-        statement.setString(1, title);
-        statement.setString(2, content);
-        statement.setString(3, postId);
+        Integer postId = post.getId();
+
+        statement.setString(1, post.getTitle());
+        statement.setString(2, post.getContent());
+        statement.setString(3, post.getUser_id());
 
         statement.executeUpdate();
 
         statement.close();
         connection.close();
+    }
+
+    public boolean CheckAuthor(String postId, Integer userId) throws SQLException {
+        sqlQuery = "SELECT user_id FROM posts WHERE id=?";
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }
+
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, postId);
+
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            String author = resultSet.getString("user_id");
+
+            if (userId.equals(author)) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+        return false;
     }
 
 

@@ -8,11 +8,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>Title</title>
 </head>
 <body>
  <ul>
+
+<body>
+<button><a href="postForm.jsp">New Post</a></button>
+<ul>
     <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
     <% for (Post blog : blogs) {%>
     <li>
