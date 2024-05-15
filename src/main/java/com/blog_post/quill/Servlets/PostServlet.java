@@ -18,7 +18,7 @@ import java.util.List;
 public class PostServlet extends HttpServlet {
     private static PostService postService;
     private static BlogPostDAO cacheDao;
-    Duration ttl = Duration.ofMinutes(30);
+    Duration ttl = Duration.ofMinutes(1);
 
     public PostServlet(){
         this.cacheDao = new CachedPostService(new PostService(), ttl);
@@ -54,18 +54,18 @@ public class PostServlet extends HttpServlet {
         try {
             posts = cacheDao.getAllBlogs();
 
+            if(posts.isEmpty()){
+                req.setAttribute("message", "No Blogs Found");
+            }else {
+                req.setAttribute("posts", posts);
+            }
 
+            req.getRequestDispatcher("/Home.jsp").forward(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        if(posts.isEmpty()){
-            req.setAttribute("posts", posts);
-        }else {
-            req.setAttribute("posts", "No Blogs Found");
-        }
 
-        req.getRequestDispatcher("/posts.jsp").forward(req, resp);
     }
 
     @Override

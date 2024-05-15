@@ -15,7 +15,7 @@ public class PostService implements BlogPostDAO {
 
     public List<Post> getAllBlogs() throws SQLException {
         List<Post> posts = new ArrayList<>();
-        sqlQuery = "SELECT * FROM posts";
+        sqlQuery = "SELECT * FROM posts order by id desc";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -28,10 +28,11 @@ public class PostService implements BlogPostDAO {
         ResultSet resultSet = statement.executeQuery(sqlQuery);
 
         while (resultSet.next()) {
+            int Id = resultSet.getInt("id");
             String title = resultSet.getString("title");
             String content = resultSet.getString("content");
             String userId = resultSet.getString("user_id");
-            posts.add(new Post(title, content, userId));
+            posts.add(new Post(Id, title, content, userId));
         }
         resultSet.close();
         statement.close();
@@ -158,8 +159,6 @@ public class PostService implements BlogPostDAO {
 
             if (userId.equals(author)) {
                 return true;
-            }else {
-                return false;
             }
         }
 

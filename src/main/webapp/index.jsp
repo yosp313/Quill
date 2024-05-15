@@ -81,6 +81,5 @@
     <button class="GetStartedbtn" type="button"><a  href="Login.jsp">Get Started!</a></button>
 
 </div>
-
 </body>
 </html>

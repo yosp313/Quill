@@ -25,15 +25,13 @@ public class CachedPostService implements BlogPostDAO {
         this.blogService = blogService;
         this.ttl = ttl;
         this.blogCache = new HashMap<Integer, Post>();
-
-        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-        executorService.scheduleAtFixedRate(this::cleanupExpiredEntries, ttl.toMinutes(), ttl.toMinutes(), TimeUnit.MINUTES);
     }
 
     @Override
     public List<Post> getAllBlogs() throws SQLException {
+        cleanupExpiredEntries();
 
-        if (blogCache.isEmpty()) {
+        if (blogCache.isEmpty() &&  ttl-syste) {
             try {
                 List<Post> posts = blogService.getAllBlogs();
                 blogCache.putAll(posts.stream().collect(Collectors.toMap(Post::getId, blog -> blog)));
@@ -55,5 +53,6 @@ public class CachedPostService implements BlogPostDAO {
     }
 
 }
+
 
 

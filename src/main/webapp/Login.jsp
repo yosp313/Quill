@@ -156,7 +156,7 @@
                 <label>Email</label>
                 <input type="text" id="mail" name="email" placeholder="Enter your email here"><br>
                 <label>Password</label>
-                <input type="text" id="pass" name="Password" placeholder="Enter your password here"><br>
+                <input type="password" id="pass" name="password" placeholder="Enter your password here"><br>
                 <p class="error">${error}</p>
                 <br>
                 <input type="submit" value="Login"  class="Submitbtn">
