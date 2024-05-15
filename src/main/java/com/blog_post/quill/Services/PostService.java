@@ -173,5 +173,35 @@ public class PostService implements BlogPostDAO {
         return false;
     }
 
+    public List<Post> getMyBlogs(String userId) throws SQLException {
+        List<Post> posts = new ArrayList<>();
+        sqlQuery = "select * from posts where user_id=?";
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }
+
+        Connection connection = db.ConfDB();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        while (resultSet.next()) {
+            int Id = resultSet.getInt("id");
+            String title = resultSet.getString("title");
+            String content = resultSet.getString("content");
+
+            posts.add(new Post(Id, title, content, userId));
+        }
+
+
+
+        return posts;
+    }
+
 
 }
