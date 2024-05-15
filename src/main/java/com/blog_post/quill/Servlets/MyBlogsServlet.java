@@ -3,6 +3,7 @@ package com.blog_post.quill.Servlets;
 import com.blog_post.quill.Models.Post;
 import com.blog_post.quill.Services.PostService;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+@WebServlet("/myblogs")
 public class MyBlogsServlet extends HttpServlet {
     PostService postService;
 
@@ -24,10 +26,12 @@ public class MyBlogsServlet extends HttpServlet {
         List<Post> posts;
 
         HttpSession session = req.getSession();
-        String userId = (String) session.getAttribute("userId");
+        Integer userId = (Integer) session.getAttribute("userId");
 
         try{
             posts = postService.getMyBlogs(userId);
+
+            System.out.println(posts);
 
             req.setAttribute("myPosts", posts);
             req.getRequestDispatcher("MyBlogs.jsp").forward(req, resp);
