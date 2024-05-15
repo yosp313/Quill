@@ -231,7 +231,12 @@
                 <ul>
                     <li> <a href="Home.jsp"><i class="fa fa-fw fa-home"></i> Home</a> </li>
                     <li> <a href="#divmedia"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
-                    <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i> Sign-Out</a> </li>
+
+                    <li>
+                        <form action="/logout" method="get">
+                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                        </form>
+                    </li>
                 </ul>
                 <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>

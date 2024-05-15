@@ -54,7 +54,24 @@
         align-items: baseline;
         flex: 1 0 0%;
     }
-    #navbarcontainer a {
+    #navbarcontainer a  {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        display: block;
+        color: #1D8CDB;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    #navbarcontainer signout{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        display: block;
+        color: #1D8CDB;
+        text-decoration: none;
+        font-size: 30px;
+    }
+    #navbarcontainer button{
         font-family: Arial, Helvetica, sans-serif;
         padding: 10px;
         display: block;
@@ -251,7 +268,12 @@
             <ul>
                 <li> <a href="Home.jsp"><i class="fa fa-fw fa-home"></i> Home</a> </li>
                 <li> <a href="#divmedia"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
-                <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i> Sign-Out</a> </li>
+
+                <li>
+                    <form action="/logout" method="get">
+                        <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                    </form>
+                     </li>
             </ul>
         <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
         </div>
