@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.blog_post.quill.Models.Post" %><%--
   Created by IntelliJ IDEA.
   User: youss
   Date: 5/16/2024
@@ -281,19 +282,23 @@
 </head>
 <body>
 <section class ="Postsbg" >
-    <button class="Posts"><a href="//post page">
-        <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
-    </a>
-    </button>
-    <br>
-    <br>
-    <br>
-    <button class="Posts"><a href="//post page">
-        <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
-    </a>
-        </button>
+    <ul>
+        <%if(request.getAttribute("myPosts") != null){%>
+        <% List<Post> myPosts = (List<Post>) request.getAttribute("myPosts"); %>
+        <% for (Post  post : myPosts) {%>
+        <li class="listItem">
+            <form action="/singlePost" method="post">
+                <button class="Posts">
+                    <input value="<%=post.getId()%>" type="hidden" name="postId" >
+                    <div></div>
+                    <h1 class="postTitle"><%= post.getTitle() %></h1>
+                </button>
+            </form>
+        </li>
+        <%}%>
+        <%}%>
+    </ul>
+    ${message}
 </section>
 </body>
 </html>
