@@ -6,6 +6,14 @@
 
 
 ## Tech Stack:
+1. JSP
+2. Java
+3. MySQL
+4. HTML
+5. CSS
+6. IntelliJ
+7. Apache Tomcat
+8. Figma
 
 
 ## Todo:
