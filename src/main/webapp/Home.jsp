@@ -170,6 +170,7 @@
     .frombg{
         padding-top: 2%;
         padding-left: 30%;
+        padding-bottom: 3%;
     }
     .newblog{
         background-color: white;
@@ -192,6 +193,40 @@
         text-decoration: none;
         color: #1D8CDB;
     }
+    .Postsbg{
+        padding-left: 17%;
+    }
+
+    .Posts{
+        box-shadow: 0px  0px  15px;
+        border-radius:36px ;
+        border-color: #0000003a;
+        width: 80%;
+        height: 60%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1%;
+     }
+
+    .Posts .postTitle{
+        color: #1D8CDB;
+        font-weight: bolder;
+        font-size: 50px;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: start;
+    }
+    .Posts .postContant{
+        color: #1D8CDB;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        word-wrap: break-word;
+    }
 </style>
 <header id="topnav">
     <nav>
@@ -211,9 +246,26 @@
     <section class="Form">
         <form action="" method="post" class="formtext">
             <button class="newblog" ><a href="PostWriting.jsp">What is on your mind? <i class="fa-brands fa-rocketchat"></i></a></button>
-
         </form>
     </section>
 </div>
+<br>
+
+<section class="Postsbg" >
+    <div class="Posts">
+        <ul>
+            <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
+            <% for (Post blog : blogs) {%>
+            <li>
+                <h2 class="postTitle"><%= blog.getTitle() %></h2>
+                <p class="postContant"><%= blog.getContent() %></p>
+            </li>
+            <%}%>
+        </ul>
+        <h2 class="postTitle">test</h2>
+        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
+
+    </div>
+    </section>
 </body>
 </html>

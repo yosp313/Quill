@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.blog_post.quill.Models.Post" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: youssef ayman
   Date: 4/29/2024
@@ -11,12 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/blogs" method="post">
-    <input placeholder="title" name="title"/>
-    <input placeholder="content" name="content"/>
-    <button type="submit">Submit</button>
-</form>
-
-${message}
+ <ul>
+    <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
+    <% for (Post blog : blogs) {%>
+    <li>
+        <h2><%= blog.getTitle() %></h2>
+        <p><%= blog.getContent() %></p>
+    </li>
+    <%}%>
+</ul>
 </body>
 </html>
