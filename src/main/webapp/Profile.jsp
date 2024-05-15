@@ -217,11 +217,11 @@
         }
         .fa-solid.fa-user {
             position: relative; /* Use relative positioning */
-            right: 20px; /* Adjust the left position */
+            margin: 1rem; /* Adjust the left position */
         }
         .Profile{
             position: relative; /* Use relative positioning */
-            right: 20px;
+            margin-right: auto;
         }
 
     </style>
