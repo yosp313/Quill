@@ -173,21 +173,42 @@
         .frombg{
             padding-top: 2%;
             padding-left: 30%;
-        }
-        .fa-solid.fa-user {
-            font-size: 5rem; /* Adjust the size of the icon */
-            cursor: pointer;
-        }
-        .fa-solid.fa-user {
-            position: relative; /* Use relative positioning */
-            right: 20px; /* Adjust the left position */
-        }
-        .Profile{
-            position: relative; /* Use relative positioning */
-            right: 20px;
-        }
+            .Posts a{
+                text-decoration: none;
+            }
+
+            .Posts .postTitle{
+                color: #1D8CDB;
+                font-weight: bolder;
+                font-size: 50px;
+                justify-content: flex-end;
+                align-items: center;
+                text-align: start;
+            }
+            .Posts .postContent{
+                color: #9a9a9a;
+                font-size: 30px;
+                justify-content: center;
+                align-items: center;
+                text-align: start;
+                word-wrap: break-word;
+            }
+            .fa-solid.fa-user {
+                font-size: 5rem; /* Adjust the size of the icon */
+                cursor: pointer;
+            }
+            .fa-solid.fa-user {
+                position: relative; /* Use relative positioning */
+            }
+            .Profile {
+
+                padding-left: 50%;
+            }
+            .header{
+                padding-right: 5%;
+            }
     </style>
-    <header id="topnav">
+    <header id="topnav" class="header">
         <nav>
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
                 <ul>
