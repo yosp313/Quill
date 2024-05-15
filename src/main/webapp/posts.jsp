@@ -12,6 +12,8 @@
 <head>
     <title>Title</title>
 </head>
+<body>
+ <ul>
 
 <body>
 <button><a href="postForm.jsp">New Post</a></button>
