@@ -52,7 +52,7 @@ public class PostServlet extends HttpServlet {
         List<Post> posts;
 
         try {
-            posts = cacheDao.getAllBlogs();
+            posts = postService.getAllBlogs();
 
             if(posts.isEmpty()){
                 req.setAttribute("message", "No Blogs Found");

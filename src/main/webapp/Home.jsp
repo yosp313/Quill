@@ -315,12 +315,13 @@
         <% List<Post> blogs = (List<Post>) request.getAttribute("posts"); %>
         <% for (Post blog : blogs) {%>
         <li class="listItem">
-            <button class="Posts">
-                <a href="//post page">
-                    <h1 class="postTitle"><%= blog.getTitle() %></h1>
-                    <p class="postContent"><%= blog.getContent() %></p>
-                </a>
-            </button>
+           <form action="/singlePost" method="post">
+               <button class="Posts">
+                   <input value="<%=blog.getId()%>" type="hidden" name="postId" >
+                   <h1 class="postTitle"><%= blog.getTitle() %></h1>
+                   <p class="postContent"><%= blog.getContent() %></p>
+               </button>
+           </form>
         </li>
         <%}%>
         <%}%>

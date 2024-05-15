@@ -42,7 +42,7 @@ public class PostService implements BlogPostDAO {
     }
 
     public Post getBlog(String postId) throws SQLException {
-        sqlQuery = "SELECT * FROM posts WHERE id=?";
+        sqlQuery = "SELECT * FROM posts WHERE id=? limit 1";
 
 
         try {
@@ -52,13 +52,17 @@ public class PostService implements BlogPostDAO {
         }
 
         Connection connection = db.ConfDB();
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sqlQuery);
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
+
+        statement.setString(1, postId);
+
+        ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.next()) {
             String title = resultSet.getString("title");
             String content = resultSet.getString("content");
             String author = resultSet.getString("user_id");
+
 
             return new Post(title, content, author);
         }
