@@ -129,7 +129,6 @@
             padding-right: 20%;
             justify-content: center;
             align-items: center;
-            padding-top: 5%;
         }
 
 
@@ -192,12 +191,12 @@
             opacity: 0.9;
             font-size: 25px;
             font-family: Arial, Helvetica, sans-serif;
+
         }
 
         .Submitbtn:hover {
             opacity: 1;
         }
-
 
         .Form p{
             font-family: Arial, Helvetica, sans-serif;
@@ -212,16 +211,34 @@
             font-size: 15px;
             font-weight: bolder;
         }
+        .fa-solid.fa-user {
+            font-size: 5rem; /* Adjust the size of the icon */
+            cursor: pointer;
+        }
+        .fa-solid.fa-user {
+            position: relative; /* Use relative positioning */
+            margin: 1rem; /* Adjust the left position */
+        }
+        .Profile{
+            position: relative; /* Use relative positioning */
+            margin-right: auto;
+        }
+
     </style>
     <header id="topnav">
         <nav>
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
                 <ul>
-                    <li> <a href="Home.jsp"><i class="fa fa-fw fa-home"></i> Home</a> </li>
-                    <li> <a href="#divmedia"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
-                    <li> <a href="#content"><i class="fa-solid fa-right-from-bracket"></i> Sign-Out</a> </li>
+                    <li> <a href="/blogs"><i class="fa fa-fw fa-home"></i> Home</a> </li>
+                    <li> <a href="MyBlogs.jsp"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
+
+                    <li>
+                        <form action="/logout" method="get">
+                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                        </form>
+                    </li>
                 </ul>
-                <img class="PPimage" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
+                <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>
 
         </nav>
@@ -242,10 +259,12 @@
         <div class="Form">
 
 
-            <form action="/login" method="post">
+            <form action="/change-user-name" method="post">
                 <label>Username</label>
                 <input type="text" id="Name" name="Username" ><br>
                 <input type="submit" value=" Change username"  class="usernamebtn"><br><br>
+            </form>
+            <form action="/changePassword" method="post">
                 <label>Password</label> <br>
                 <input type="text" id="pass" name="Password"><br>
                 <input type="submit" value="Change password"  class="passbtn"><br>
@@ -254,7 +273,6 @@
                 <input type="submit" value="Save"  class="Submitbtn">
             </form>
         </div>
-        <p>Don’t have an account? <span><a href="Registration.jsp">Register</a></span></p>
     </section>
 </section>
 
