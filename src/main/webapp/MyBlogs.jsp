@@ -297,7 +297,7 @@
 <body>
 <section class ="Postsbg" >
     <button class="Posts"><a href="//post page">
-        <i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i>
+        <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
         <h2 class="postTitle">test</h2>
         <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
     </a>
@@ -306,7 +306,7 @@
     <br>
     <br>
     <button class="Posts"><a href="//post page">
-        <i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i>
+        <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
         <h2 class="postTitle">test</h2>
         <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
     </a>
