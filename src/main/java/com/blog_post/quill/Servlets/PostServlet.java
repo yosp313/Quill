@@ -27,14 +27,12 @@ public class PostServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String title = req.getParameter("title");
-        String content = req.getParameter("content");
-
         HttpSession session = req.getSession();
 
         Integer user_id = (Integer) session.getAttribute("userId");
 
-        System.out.println(title + " " + content + " " + user_id);
+        String title = req.getParameter("title");
+        String content = req.getParameter("content");
 
         try {
             postService.postBlog(title, content, user_id);
@@ -49,14 +47,6 @@ public class PostServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-
-        var userSession = session.getAttribute("userId");
-
-        if(userSession == null){
-            req.getRequestDispatcher("/login").forward(req, resp);
-        }
-
         List<Post> posts;
 
         try {
@@ -72,7 +62,5 @@ public class PostServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

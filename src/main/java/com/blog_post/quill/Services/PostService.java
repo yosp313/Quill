@@ -145,7 +145,7 @@ public class PostService implements BlogPostDAO {
 
     public List<Post> getMyBlogs(Integer userId) throws SQLException {
         List<Post> posts = new ArrayList<>();
-        sqlQuery = "select * from posts where user_id=?";
+        sqlQuery = "select * from posts where user_id=? order by id desc";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");

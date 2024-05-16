@@ -1,16 +1,21 @@
-<%@ page import="java.util.List" %>
 <%@ page import="com.blog_post.quill.Models.Post" %><%--
   Created by IntelliJ IDEA.
   User: youss
-  Date: 5/16/2024
-  Time: 1:22 AM
+  Date: 5/12/2024
+  Time: 7:21 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Homestyle.css">
+    <title>Home-Feed</title>
     <style>
         body {
             margin: 0;
@@ -52,24 +57,7 @@
             align-items: baseline;
             flex: 1 0 0%;
         }
-        #navbarcontainer a  {
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 10px;
-            display: block;
-            color: #1D8CDB;
-            text-decoration: none;
-            font-size: 30px;
-        }
-
-        #navbarcontainer signout{
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 10px;
-            display: block;
-            color: #1D8CDB;
-            text-decoration: none;
-            font-size: 30px;
-        }
-        #navbarcontainer button{
+        #navbarcontainer a {
             font-family: Arial, Helvetica, sans-serif;
             padding: 10px;
             display: block;
@@ -121,10 +109,10 @@
         }
         .Form{
             box-shadow: 0px  0px  15px;
-            border-radius:36px ;
+             border-radius:36px ;
             border-color: #0000003a;
             width: 60%;
-            height: 20%;
+            height: 60%;
             padding-bottom: 5%;
             padding-left: 5%;
             padding-right: 5%;
@@ -146,7 +134,7 @@
 
         }
         .Form .Title{
-            font-size: 20px;
+             font-size: 20px;
             color: #1D8CDB;
         }
 
@@ -182,115 +170,41 @@
         .Submitbtn:hover {
             opacity: 1;
         }
-        .frombg{
+        .frombg {
             padding-top: 2%;
             padding-left: 30%;
-            padding-bottom: 3%;
         }
-        .newblog{
-            background-color: white;
-            justify-content: flex-start;
-            color: #1D8CDB;
-            padding-right: 30%;
-            padding: 5px 10px;
-            border: none;
-            border-radius:11px ;
-            width: 100%;
-            font-size: 25px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+            .Posts a{
+                text-decoration: none;
+            }
 
-        .newblog i{
-            padding-left: 40%;
-
-        }
-        .newblog a{
-            color: #1D8CDB;
-            text-decoration: none;
-        }
-        .Postsbg{
-            padding-left: 17%;
-        }
-
-        .Posts{
-            box-shadow: 0px  0px  15px;
-            border-radius:36px ;
-            border-color: #0000003a;
-            width: 80%;
-            height: 60%;
-            padding-bottom: 5%;
-            padding-left: 5%;
-            padding-right: 5%;
-            justify-content: center;
-            align-items: center;
-            padding-top: 1%;
-            overflow: hidden;
-        }
-        .Posts a{
-            text-decoration: none;
-        }
-
-        .Posts .postTitle{
-            color: #1D8CDB;
-            font-weight: bolder;
-            font-size: 50px;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: start;
-        }
-        .Posts .postContant{
-            color: #9a9a9a;
-            font-size: 30px;
-            justify-content: center;
-            align-items: center;
-            text-align: start;
-            word-wrap: break-word;
-        }
-        .fa-solid.fa-user {
-            font-size: 5rem; /* Adjust the size of the icon */
-            cursor: pointer;
-        }
-        .fa-solid.fa-user {
-            position: relative; /* Use relative positioning */
-        }
-        .Profile {
-
-            padding-left: 50%;
-        }
+            .Posts .postTitle{
+                color: #1D8CDB;
+                font-weight: bolder;
+                font-size: 50px;
+                justify-content: flex-end;
+                align-items: center;
+                text-align: start;
+            }
+            .Posts .postContent{
+                color: #9a9a9a;
+                font-size: 30px;
+                justify-content: center;
+                align-items: center;
+                text-align: start;
+                word-wrap: break-word;
+            }
+            .fa-solid.fa-user {
+                font-size: 5rem; /* Adjust the size of the icon */
+                cursor: pointer;
+            }
+            .fa-solid.fa-user {
+                position: relative; /* Use relative positioning */
+            }
         .header{
             padding-right: 5%;
         }
-        .fa-solid.fa-pen-to-square{
-            font-size: 2rem;
-            color: #1D8CDB;
-            padding-top: 5%;
-            padding-left: 92%;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-        }
-        .fa-solid.fa-trash-can{
-            font-size: 2rem;
-            padding-left: 1%;
-            color: #DB1D1D;
-        }
-
-        .editBtn{
-            background-color: transparent; /* Remove background color */
-            border: none; /* Remove border */
-            outline: none; /* Remove outline */
-            box-shadow: none;
-            cursor: pointer;
-            margin-inline: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        li{
-            list-style-type: none;
-            margin: 3rem;
-        }
     </style>
-    <title>My BLogs</title>
     <header id="topnav" class="header">
         <nav>
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
@@ -311,35 +225,18 @@
     </header>
 </head>
 <body>
-<section class ="Postsbg" >
-    <ul>
-        <%if(request.getAttribute("myPosts") != null){%>
-        <% List<Post> myPosts = (List<Post>) request.getAttribute("myPosts"); %>
-        <% for (Post  post : myPosts) {%>
-        <li class="listItem">
-            <section>
-                <form action="/edit-form" method="get">
-                    <input type="hidden" value="<%=post.getId()%>" name="postId">
-                    <input type="hidden" value="<%=post.getTitle()%>" name="postTitle">
-                    <input type="hidden" value="<%=post.getContent()%>" name="postContent">
-                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i>  </button>
-                </form>
-                <form action="/postop" method="get">
-                    <input type="hidden" value="<%=post.getId()%>" name="postId">
-                    <button class="editBtn"><i class="fa-solid fa-trash-can"></i></button>
-                </form>
-            </section>
-            <form action="/singlePost" method="post">
-            <button class="Posts">
-                    <input value="<%=post.getId()%>" type="hidden" name="postId" >
-                    <h1 class="postTitle"><%= post.getTitle() %></h1>
-            </button>
-            </form>
-        </li>
-        <%}%>
-        <%}%>
-    </ul>
-    ${message}
-</section>
+<div class="frombg">
+    <section class="Form">
+        <form action="/edit-form" method="post" class="formtext">
+            <%Post post = (Post) request.getAttribute("post");%>
+            <input placeholder="Title" type="hidden" name="postId" class="Title" value="<%=post.getId()%>"/>
+            <input placeholder="Title" type="text" name="postTitle" class="Title" value="<%=post.getTitle()%>"/><br>
+            <input placeholder="Content" type="text" name="postContent" class="Content" value="<%=post.getContent()%>"/> <br>
+            <button type="submit" class="Submitbtn">Submit</button>
+        </form>
+    </section>
+</div>
+
+${message}
 </body>
 </html>

@@ -48,10 +48,6 @@ public class ProfileServlet extends HttpServlet {
 
         String userEmail = (String) session.getAttribute("userEmail");
 
-        if(userEmail == null){
-            req.getRequestDispatcher("/login").forward(req, resp);
-        }
-
         String password = req.getParameter("password");
         String username = req.getParameter("username");
 
