@@ -31,9 +31,13 @@ public class MyBlogsServlet extends HttpServlet {
         try{
             posts = postService.getMyBlogs(userId);
 
-            System.out.println(posts);
+            if(posts.size() <= 0){
+                req.setAttribute("message", "You have not created any posts yet");
+            }else {
+                req.setAttribute("myPosts", posts);
+            }
 
-            req.setAttribute("myPosts", posts);
+
             req.getRequestDispatcher("MyBlogs.jsp").forward(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);

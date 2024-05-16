@@ -36,11 +36,13 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("userId", userId);
                     session.setAttribute("userEmail", userEmail);
 
-                    response.sendRedirect("blogs");
+                    response.sendRedirect("/blogs");
                 }
                 else {
                     request.setAttribute("error", "Wrong username or password");
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
+
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);

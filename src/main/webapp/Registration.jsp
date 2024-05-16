@@ -143,9 +143,9 @@
                 <label>Username</label>
                 <input type="text" id="Name" name="userName" placeholder="Enter your username here"><br>
                 <label>Password</label>
-                <input type="text" id="pass" name="Password" placeholder="Enter your password here"><br>
+                <input type="password" id="pass" name="password" placeholder="Enter your password here"><br>
                 <label> Confirm password</label>
-                <input type="text" id="confirmPass" name="Password" placeholder="Enter your password again"><br>
+                <input type="password" id="confirmPass" name="confirmPassword" placeholder="Enter your password again"><br>
                 <p>${error}</p>
                 <br>
                 <button type="submit" class="Submitbtn">Register</button>
