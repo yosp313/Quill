@@ -170,9 +170,10 @@
         .Submitbtn:hover {
             opacity: 1;
         }
-        .frombg{
+        .frombg {
             padding-top: 2%;
             padding-left: 30%;
+        }
             .Posts a{
                 text-decoration: none;
             }
@@ -200,13 +201,9 @@
             .fa-solid.fa-user {
                 position: relative; /* Use relative positioning */
             }
-            .Profile {
-
-                padding-left: 50%;
-            }
-            .header{
-                padding-right: 5%;
-            }
+        .header{
+            padding-right: 5%;
+        }
     </style>
     <header id="topnav" class="header">
         <nav>
