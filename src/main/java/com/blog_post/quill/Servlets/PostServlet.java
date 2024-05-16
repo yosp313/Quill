@@ -17,12 +17,14 @@ import java.util.List;
 @WebServlet("/blogs")
 public class PostServlet extends HttpServlet {
     private static PostService postService;
-    private static BlogPostDAO cacheDao;
+    private static CachedPostService cacheDao;
     Duration ttl = Duration.ofMinutes(1);
 
     public PostServlet(){
-        this.cacheDao = new CachedPostService(new PostService(), ttl);
+        this.cacheDao = new CachedPostService(new PostService());
         this.postService = new PostService();
+
+        postService.registerObserver(cacheDao);
     }
 
     @Override
@@ -50,7 +52,7 @@ public class PostServlet extends HttpServlet {
         List<Post> posts;
 
         try {
-            posts = postService.getAllBlogs();
+            posts = cacheDao.getAllBlogs();
 
             if(posts.isEmpty()){
                 req.setAttribute("message", "No Blogs Found");

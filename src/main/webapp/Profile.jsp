@@ -280,7 +280,7 @@
         <a>Start your creative journey with Quill</a>
         <div class="Form">
             <%User user = (User) request.getAttribute("user");%>
-            <form action="/change-user-name" method="post">
+            <form action="/profile" method="post">
                 <label>Username</label>
                 <input type="text" id="Name" name="username" value="<%=user.getUsername()%>"><br>
 

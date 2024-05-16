@@ -1,5 +1,6 @@
 package com.blog_post.quill.Servlets;
 
+import com.blog_post.quill.Services.CachedPostService;
 import com.blog_post.quill.Services.PostService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,10 +13,14 @@ import java.sql.SQLException;
 
 @WebServlet("/postop")
 public class PostOpServlet extends HttpServlet {
-    PostService postService;
+    static PostService postService;
+    static CachedPostService cachedPostService;
 
     public PostOpServlet() {
         this.postService = new PostService();
+        this.cachedPostService = new CachedPostService(new PostService());
+
+        postService.registerObserver(cachedPostService);
     }
 
     @Override

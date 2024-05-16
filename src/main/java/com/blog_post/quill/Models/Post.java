@@ -14,7 +14,8 @@ public class Post {
         this.content = content;
         this.user_id = userId;
     }
-    public Post(int id,String title, String content, String userId) {
+
+    public Post(int id, String title, String content, String userId) {
         this.id = id;
         this.title = title;
         this.content = content;

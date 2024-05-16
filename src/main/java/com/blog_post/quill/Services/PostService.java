@@ -2,20 +2,41 @@ package com.blog_post.quill.Services;
 
 import com.blog_post.quill.Configs.DB;
 import com.blog_post.quill.Interfaces.BlogPostDAO;
+import com.blog_post.quill.Interfaces.Observer;
+import com.blog_post.quill.Interfaces.Subject;
 import com.blog_post.quill.Models.Post;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostService implements BlogPostDAO {
+public class PostService implements BlogPostDAO, Subject {
     private static String sqlQuery;
     private static DB db = new DB();
+    private List<Observer> observers = new ArrayList<>();
 
+
+    @Override
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer o : observers) {
+            o.update();
+        }
+    }
 
     public List<Post> getAllBlogs() throws SQLException {
-        List<Post> posts = new ArrayList<>();
         sqlQuery = "SELECT * FROM posts order by id desc";
+        
+        List<Post> posts = new ArrayList<>();
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,7 +45,7 @@ public class PostService implements BlogPostDAO {
         }
 
         Connection connection = db.ConfDB();
-        Statement statement = connection.createStatement();
+        PreparedStatement statement = connection.prepareStatement(sqlQuery);
         ResultSet resultSet = statement.executeQuery(sqlQuery);
 
         while (resultSet.next()) {
@@ -95,6 +116,8 @@ public class PostService implements BlogPostDAO {
 
         statement.executeUpdate();
 
+        notifyObservers();
+
         statement.close();
         connection.close();
     }
@@ -115,8 +138,11 @@ public class PostService implements BlogPostDAO {
 
         statement.executeUpdate();
 
+        notifyObservers();
+
         statement.close();
         connection.close();
+
     }
 
     public void updatePost(Post post) throws SQLException {
@@ -131,13 +157,12 @@ public class PostService implements BlogPostDAO {
         Connection connection = db.ConfDB();
         PreparedStatement statement = connection.prepareStatement(sqlQuery);
 
-        Integer postId = post.getId();
-
         statement.setString(1, post.getTitle());
         statement.setString(2, post.getContent());
-        statement.setString(3, post.getUser_id());
+        statement.setInt(3, post.getId());
 
         statement.executeUpdate();
+        notifyObservers();
 
         statement.close();
         connection.close();

@@ -1,7 +1,6 @@
 package com.blog_post.quill.Configs;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DB {
@@ -10,8 +9,6 @@ public class DB {
     private static final String PASSWORD = "Root1234";
 
     public Connection ConfDB() throws SQLException {
-        Connection conn = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
-
-        return conn;
+        return new ConnectionBuilder().setUrl(CONNECTION_STRING).setUsername(USERNAME).setPassword(PASSWORD).build();
     }
 }

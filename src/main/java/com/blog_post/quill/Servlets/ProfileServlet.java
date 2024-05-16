@@ -3,7 +3,7 @@ package com.blog_post.quill.Servlets;
 import com.blog_post.quill.Models.User;
 import com.blog_post.quill.Services.UserService;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -68,7 +68,7 @@ public class ProfileServlet extends HttpServlet {
 
             userService.updateUser(user);
 
-            resp.sendRedirect("/profile");
+            req.getRequestDispatcher("/profile").forward(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
