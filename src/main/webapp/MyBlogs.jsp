@@ -274,6 +274,21 @@
             padding-left: 1%;
             color: #DB1D1D;
         }
+
+        .editBtn{
+            background-color: transparent; /* Remove background color */
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            box-shadow: none;
+            cursor: pointer;
+            margin-inline: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        li{
+            list-style-type: none;
+            margin: 3rem;
+        }
     </style>
     <title>My BLogs</title>
     <header id="topnav" class="header">
@@ -281,15 +296,15 @@
             <div id="navbarcontainer"> <img class="logo" src="https://scontent.fcai20-6.fna.fbcdn.net/v/t39.30808-6/438100483_769472191919124_8825375989662758722_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEo_7XKLWUbYxh5iCcewcSuvDb1LEqEu6e8NvUsSoS7p8AJuNduRDfj_eRhW98FUprJft1JJBiXOYOX12w0vqMI&_nc_ohc=12WBnC8kuWIQ7kNvgHojWBo&_nc_ht=scontent.fcai20-6.fna&oh=00_AYCw1THfudK2YfoP0f0Hjw1R9xNejLzft7AP0puwt4YFyw&oe=6646D6BE" alt="Logo">
                 <ul>
                     <li> <a href="/blogs"><i class="fa fa-fw fa-home"></i> Home</a> </li>
-                    <li> <a href="MyBlogs.jsp"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
+                    <li> <a href="/myblogs"><i class="fa-solid fa-comment"></i> My Blog</a> </li>
 
                     <li>
                         <form action="/logout" method="get">
-                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                            <a href="/logout"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
                         </form>
                     </li>
                 </ul>
-                <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
+                <a href="/profile"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>
 
         </nav>
@@ -297,33 +312,27 @@
 </head>
 <body>
 <section class ="Postsbg" >
-    <button class="Posts"><a href="//post page">
-        <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
-        <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghfdggggggggggggggggggggggggggdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
-    </a>
-    </button>
-    <br>
-    <br>
-    <br>
-    <button class="Posts"><a href="//post page">
-        <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
-        <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgfdggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
-    </a>
-        </button>
-
     <ul>
         <%if(request.getAttribute("myPosts") != null){%>
         <% List<Post> myPosts = (List<Post>) request.getAttribute("myPosts"); %>
         <% for (Post  post : myPosts) {%>
         <li class="listItem">
+            <section>
+<%--                <form action="/postop" method="post">--%>
+<%--                    <input type="hidden" value="<%=post.getTitle()%>" name="postTitle">--%>
+<%--                    <input type="hidden" value="<%=post.getContent()%>" name="postContent">--%>
+<%--                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i>  </button>--%>
+<%--                </form>--%>
+                <form action="/postop" method="get">
+                    <input type="hidden" value="<%=post.getId()%>" name="postId">
+                    <button class="editBtn"><i class="fa-solid fa-trash-can"></i></button>
+                </form>
+            </section>
             <form action="/singlePost" method="post">
-                <button class="Posts">
+            <button class="Posts">
                     <input value="<%=post.getId()%>" type="hidden" name="postId" >
-                    <div></div>
                     <h1 class="postTitle"><%= post.getTitle() %></h1>
-                </button>
+            </button>
             </form>
         </li>
         <%}%>

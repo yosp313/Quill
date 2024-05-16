@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/blogs", "/change-user-name", "/change-password", "/logout", "myblogs"})
+@WebFilter(urlPatterns = {"/blogs", "/change-user-name", "/change-password", "/logout", "/myblogs", "/profile"})
 public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

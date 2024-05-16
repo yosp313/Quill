@@ -10,14 +10,20 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet ("/change-user-name")
-    public class changeUserName extends HttpServlet {
+public class changeUserName extends HttpServlet {
+    UserService userService;
+
+    public changeUserName() {
+        userService = new UserService();
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
         String userEmail = (String) session.getAttribute("userEmail");
 
-        String newUserName = request.getParameter("newUserName");
+        String newUserName = request.getParameter("username");
 
         UserService userService = new UserService();
 
@@ -27,6 +33,7 @@ import java.sql.SQLException;
 
             userService.updateUser(user);
 
+            request.getRequestDispatcher("/profile").forward(request, response);
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }

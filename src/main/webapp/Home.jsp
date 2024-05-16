@@ -265,6 +265,7 @@
     }
     li{
         list-style-type: none;
+        margin: 3rem;
     }
 </style>
 <header id="topnav" class="header">
@@ -276,11 +277,11 @@
 
                 <li>
                     <form action="/logout" method="get">
-                        <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                        <a href="/logout"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
                     </form>
                      </li>
             </ul>
-        <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
+        <a href="/profile"><i class="fa-solid fa-user" class="Profile"></i></a>
         </div>
 
     </nav>
@@ -315,12 +316,6 @@
         <%}%>
     </ul>
     ${message}
-    </section>
-    <section class="Postsbg">
-        <button class="Posts">
-            <h1 class="postTitle">fdughd</h1>
-            <p class="postContent">dgffdjgfdoigdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhdgffdjgfdoighjfdohfdhhjfdohfdh</p>
-        </button>
     </section>
 </body>
 </html>

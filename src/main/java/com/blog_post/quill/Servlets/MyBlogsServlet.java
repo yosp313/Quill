@@ -26,7 +26,13 @@ public class MyBlogsServlet extends HttpServlet {
         List<Post> posts;
 
         HttpSession session = req.getSession();
-        Integer userId = (Integer) session.getAttribute("userId");
+        var userSession = session.getAttribute("userId");
+
+        if (userSession == null) {
+            req.getRequestDispatcher("/login").forward(req, resp);
+        }
+
+        Integer userId = (Integer) userSession;
 
         try{
             posts = postService.getMyBlogs(userId);

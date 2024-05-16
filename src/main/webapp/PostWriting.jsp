@@ -217,11 +217,11 @@
 
                     <li>
                         <form action="/logout" method="get">
-                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                            <a href="/logout"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
                         </form>
                     </li>
                 </ul>
-                <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
+                <a href="/profile"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>
 
         </nav>

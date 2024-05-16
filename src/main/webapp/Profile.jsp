@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.blog_post.quill.Models.User" %><%--
   Created by IntelliJ IDEA.
   User: hussenarafa
   Date: 30/04/2024
@@ -256,11 +256,11 @@
 
                     <li>
                         <form action="/logout" method="get">
-                            <a href="index.jsp"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
+                            <a href="/logout"><i class="fa-solid fa-right-from-bracket" ></i> Sign-Out</a>
                         </form>
                     </li>
                 </ul>
-                <a href="Profile.jsp"><i class="fa-solid fa-user" class="Profile"></i></a>
+                <a href="/profile"><i class="fa-solid fa-user" class="Profile"></i></a>
             </div>
 
         </nav>
@@ -279,17 +279,13 @@
         <h2>Profile</h2>
         <a>Start your creative journey with Quill</a>
         <div class="Form">
-
-
+            <%User user = (User) request.getAttribute("user");%>
             <form action="/change-user-name" method="post">
                 <label>Username</label>
-                <input type="text" id="Name" name="Username" ><br>
-                <input type="submit" value=" Change username"  class="usernamebtn"><br><br>
-            </form>
-            <form action="/changePassword" method="post">
+                <input type="text" id="Name" name="username" value="<%=user.getUsername()%>"><br>
+
                 <label>Password</label> <br>
-                <input type="text" id="pass" name="Password"><br>
-                <input type="submit" value="Change password"  class="passbtn"><br>
+                <input type="password" id="pass" name="password"><br>
                 <p class="error">${error}</p>
                 <br>
                 <input type="submit" value="Save"  class="Submitbtn">

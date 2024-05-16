@@ -49,6 +49,14 @@ public class PostServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+
+        var userSession = session.getAttribute("userId");
+
+        if(userSession == null){
+            req.getRequestDispatcher("/login").forward(req, resp);
+        }
+
         List<Post> posts;
 
         try {

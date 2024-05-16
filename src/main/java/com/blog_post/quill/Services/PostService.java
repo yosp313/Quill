@@ -143,36 +143,6 @@ public class PostService implements BlogPostDAO {
         connection.close();
     }
 
-    public boolean CheckAuthor(String postId, Integer userId) throws SQLException {
-        sqlQuery = "SELECT user_id FROM posts WHERE id=?";
-
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        }catch (ClassNotFoundException e){
-            throw new RuntimeException(e);
-        }
-
-        Connection connection = db.ConfDB();
-        PreparedStatement statement = connection.prepareStatement(sqlQuery);
-
-        statement.setString(1, postId);
-
-        ResultSet resultSet = statement.executeQuery();
-        if (resultSet.next()) {
-            String author = resultSet.getString("user_id");
-
-            if (userId.equals(author)) {
-                return true;
-            }
-        }
-
-        resultSet.close();
-        statement.close();
-        connection.close();
-
-        return false;
-    }
-
     public List<Post> getMyBlogs(Integer userId) throws SQLException {
         List<Post> posts = new ArrayList<>();
         sqlQuery = "select * from posts where user_id=?";
