@@ -263,6 +263,9 @@
     .header{
         padding-right: 5%;
     }
+    li{
+        list-style-type: none;
+    }
 </style>
 <header id="topnav" class="header">
     <nav>

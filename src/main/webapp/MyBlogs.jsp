@@ -306,7 +306,7 @@
     <br>
     <br>
     <button class="Posts"><a href="//post page">
-        <i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i>
+
         <h2 class="postTitle">test</h2>
         <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
     </a>
@@ -317,6 +317,7 @@
         <% List<Post> myPosts = (List<Post>) request.getAttribute("myPosts"); %>
         <% for (Post  post : myPosts) {%>
         <li class="listItem">
+            <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i>
             <form action="/singlePost" method="post">
                 <button class="Posts">
                     <input value="<%=post.getId()%>" type="hidden" name="postId" >
