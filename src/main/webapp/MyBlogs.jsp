@@ -238,7 +238,7 @@
             align-items: center;
             text-align: start;
         }
-        .Posts .postContent{
+        .Posts .postContant{
             color: #9a9a9a;
             font-size: 30px;
             justify-content: center;
@@ -263,6 +263,7 @@
         .fa-solid.fa-pen-to-square{
             font-size: 2rem;
             color: #1D8CDB;
+            padding-top: 5%;
             padding-left: 92%;
             justify-content: flex-start;
             align-items: flex-start;
@@ -299,7 +300,7 @@
     <button class="Posts"><a href="//post page">
         <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
         <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
+        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghfdggggggggggggggggggggggggggdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
     </a>
     </button>
     <br>
@@ -308,7 +309,7 @@
     <button class="Posts"><a href="//post page">
         <a href="index.jsp"><i class="fa-solid fa-pen-to-square"></i>  </a> <a href="index.jsp"><i class="fa-solid fa-trash-can"></i></a>
         <h2 class="postTitle">test</h2>
-        <p class="postContant">houijrsdetgiuorhjgiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
+        <p class="postContant">houijrsdetgiuorhjgfdggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggiurthgirutgnjfdkijgndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfndikofgjudsfkfjghdfiughfduikyghfdikufghdskuirfdsgrfukykdsgfrudsygfrudsyfgdsuyfgdsuyfgerwuyfeuyffgeruvyergiuvyrefviurefdfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoifnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoidikofgjudfnoigdsfsdfdsfsdfsdfsdfsdfsdfsdfjfdjnhiojotfgjhiourfdgtiodrjgfderspioujgfdfpiougdrfpiugjnrtfpiuhnjtrpiubnrtpijdxgdfrghtr</p>
     </a>
         </button>
 
