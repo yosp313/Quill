@@ -75,31 +75,4 @@ public class PostServlet extends HttpServlet {
 
 
     }
-
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        String postId = req.getParameter("post_id");
-
-        HttpSession session = req.getSession();
-        Integer userId = (Integer) session.getAttribute("userId");
-
-        try{
-
-            if(postService.CheckAuthor(postId, userId)){
-                postService.deletePost(postId);
-                req.setAttribute("message", "Post Deleted Successfully!");
-            }else {
-                req.setAttribute("message", "Post Deletion Failed!");
-            }
-
-        }catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //
-    }
 }
